@@ -1,0 +1,1 @@
+const toggle=document.querySelector('.menu');toggle.onclick=()=>toggle.setAttribute('aria-expanded',document.querySelector('nav').classList.toggle('open'));const topic=new URLSearchParams(location.search).get('topic');if(topic&&document.querySelector('select')&&[...document.querySelector('select').options].some(o=>o.value===topic))document.querySelector('select').value=topic;
