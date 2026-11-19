@@ -92,4 +92,4 @@ document.addEventListener('click', e => {
         }
     }
 });
-if(document.body.classList.contains('page-gallery')){const key=new URLSearchParams(location.search).get('type')||'';document.querySelectorAll('a[href^="?type="]').forEach(a=>{const on=(new URL(a.href).searchParams.get('type')||'')===key;a.classList.toggle('btn-green',on);a.style.background=on?'var(--green-mid)':'var(--ivory)';a.style.color=on?'white':'var(--ink-mid)';});document.querySelector('.gallery-grid p').textContent=key==='image'?'No photographs have been published yet.':key==='video'?'No videos have been published yet.':'Event photographs and videos will appear here.';}
+if(document.body.classList.contains('page-gallery')){const key=new URLSearchParams(location.search).get('type')||'';document.querySelectorAll('a[href^="?type="]').forEach(a=>{const on=(new URL(a.href).searchParams.get('type')||'')===key;a.classList.toggle('btn-green',on);a.style.background=on?'var(--green-mid)':'var(--ivory)';a.style.color=on?'white':'var(--ink-mid)';});document.querySelector('.gallery-grid').hidden=key==='video';document.querySelector('#video-empty').hidden=key!=='video';}
